@@ -31,6 +31,7 @@ app.get(
   "/protected",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    console.log(req.user);
     res.json({ message: "This is a protected route" });
   }
 );
